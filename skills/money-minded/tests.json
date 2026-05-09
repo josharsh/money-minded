@@ -1,0 +1,121 @@
+{
+  "skill": "money-minded",
+  "model": "claude-haiku-4-5-20251001",
+  "tests": [
+    {
+      "name": "asks who pays before validating",
+      "prompt": "I have an idea for an AI-powered code review tool",
+      "assert": [
+        {
+          "type": "pattern",
+          "value": "(who|pay|customer|buyer|problem|solve|today)",
+          "description": "Should ask who pays or what problem is solved before validating the idea"
+        },
+        {
+          "type": "not-contains",
+          "value": "great idea",
+          "description": "Should not lead with validation"
+        }
+      ]
+    },
+    {
+      "name": "identifies current alternatives",
+      "prompt": "I want to build a project management tool for freelancers",
+      "assert": [
+        {
+          "type": "pattern",
+          "value": "(today|currently|existing|alternative|already|instead|spreadsheet|Notion|Trello|Asana)",
+          "description": "Should ask about or identify current alternatives to the proposed product"
+        }
+      ]
+    },
+    {
+      "name": "does bottom-up not top-down sizing",
+      "prompt": "The market for developer tools is $50 billion. We just need 0.1% to be a $50M company.",
+      "assert": [
+        {
+          "type": "pattern",
+          "value": "(bottom.up|count|how many|specific|actual buyer|ICP|realistic)",
+          "description": "Should push back on top-down market sizing and ask for bottom-up math"
+        }
+      ]
+    },
+    {
+      "name": "generates pre-mortem failure scenarios",
+      "prompt": "I'm building a SaaS for restaurant owners to manage their menus. $29/month. What could go wrong?",
+      "assert": [
+        {
+          "type": "pattern",
+          "value": "(fail|failed|post.mortem|scenario|die|kill|wrong|risk)",
+          "description": "Should generate specific failure scenarios, not generic risks"
+        }
+      ]
+    },
+    {
+      "name": "asks about distribution",
+      "prompt": "We've built the product and it's great. Now how do we get customers?",
+      "assert": [
+        {
+          "type": "pattern",
+          "value": "(channel|find|discover|reach|SEO|content|community|cold|partner|marketplace)",
+          "description": "Should discuss specific distribution channels, not generic marketing"
+        }
+      ]
+    },
+    {
+      "name": "challenges weak pricing",
+      "prompt": "We'll charge $5/month. It's cheap so everyone will sign up.",
+      "assert": [
+        {
+          "type": "pattern",
+          "value": "(CAC|acquisition|LTV|margin|cost|sustain|unit economics|churn)",
+          "description": "Should challenge whether $5/month supports viable unit economics"
+        }
+      ]
+    },
+    {
+      "name": "steel-mans competition",
+      "prompt": "There's no real competition in this space. Nobody does exactly what we do.",
+      "assert": [
+        {
+          "type": "pattern",
+          "value": "(alternative|current|solve|spreadsheet|manual|workaround|competitor|existing|incumbent)",
+          "description": "Should push back and identify the real competition (including non-software alternatives)"
+        }
+      ]
+    },
+    {
+      "name": "recommends smallest test",
+      "prompt": "Should I spend 6 months building this before launching?",
+      "assert": [
+        {
+          "type": "pattern",
+          "value": "(test|validate|landing page|pre.sell|interview|smallest|experiment|affordable|manual|MVP)",
+          "description": "Should recommend the smallest possible test before a 6-month build"
+        }
+      ]
+    },
+    {
+      "name": "gives direct verdict",
+      "prompt": "So what do you think? Should I build this or not?",
+      "assert": [
+        {
+          "type": "pattern",
+          "value": "(build|don't build|test first|pivot|verdict|recommend|because|evidence|unknown)",
+          "description": "Should give a direct verdict with reasoning, not hedge with 'it depends'"
+        }
+      ]
+    },
+    {
+      "name": "scan identifies monetization opportunities",
+      "prompt": "Scan this project for monetization opportunities. It's an open-source CLI tool with 5,000 GitHub stars.",
+      "assert": [
+        {
+          "type": "pattern",
+          "value": "(revenue|monetiz|paid|premium|sponsor|license|hosting|support|enterprise|freemium|cloud)",
+          "description": "Should identify specific monetization paths for an open-source project"
+        }
+      ]
+    }
+  ]
+}
