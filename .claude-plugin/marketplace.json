@@ -1,11 +1,19 @@
 {
-  "name": "money-minded",
-  "description": "Force commercial rigor on every idea and opportunity — anti-sycophancy, bottom-up math, pre-mortem, distribution-first thinking, and 'who pays' before anything gets built",
-  "version": "1.0.0",
-  "skills": [
+  "owner": {
+    "name": "josharsh",
+    "url": "https://github.com/josharsh"
+  },
+  "plugins": [
     {
       "name": "money-minded",
-      "path": "skills/money-minded/SKILL.md"
+      "description": "Force commercial rigor on every idea and opportunity — anti-sycophancy, bottom-up math, pre-mortem, distribution-first thinking, and 'who pays' before anything gets built",
+      "version": "1.0.0",
+      "skills": [
+        {
+          "name": "money-minded",
+          "path": "skills/money-minded/SKILL.md"
+        }
+      ]
     }
   ]
 }
