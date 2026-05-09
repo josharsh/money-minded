@@ -6,7 +6,7 @@
   "plugins": [
     {
       "name": "money-minded",
-      "source": ".",
+      "source": "./",
       "description": "Force commercial rigor on every idea and opportunity — anti-sycophancy, bottom-up math, pre-mortem, distribution-first thinking",
       "version": "1.0.0"
     }
