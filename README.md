@@ -4,14 +4,18 @@ A Claude Code skill that forces commercial rigor on every idea, feature, and opp
 
 ## Install
 
-```bash
-/plugin marketplace add money-minded
+In Claude Code, run:
+
+```
+/plugin marketplace add josharsh/money-minded
 ```
 
 Or manually:
 
 ```bash
-./install.sh
+mkdir -p ~/.claude/skills/money-minded
+curl -sL https://raw.githubusercontent.com/josharsh/money-minded/main/skills/money-minded/SKILL.md \
+  -o ~/.claude/skills/money-minded/SKILL.md
 ```
 
 ## The Problem
